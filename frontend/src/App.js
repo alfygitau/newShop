@@ -3,6 +3,7 @@ import Header from "./components/Header";
 
 // external modules
 import { Container } from "react-bootstrap";
+import Homepage from "./pages/Homepage";
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <Header />
       <main className="py-3">
         <Container>
-          <h1>Welcome to DeliverX shop</h1>
+          <Homepage />
         </Container>
       </main>
       <Footer />
