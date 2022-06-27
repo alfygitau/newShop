@@ -1,0 +1,29 @@
+{
+  "name": "newshop",
+  "version": "1.0.0",
+  "description": "MERN app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfygitau/newShop.git"
+  },
+  "author": "Alfred",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfygitau/newShop/issues"
+  },
+  "homepage": "https://github.com/alfygitau/newShop#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.18"
+  }
+}
