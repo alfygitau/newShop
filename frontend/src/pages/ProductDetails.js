@@ -16,7 +16,7 @@ import Rating from "../components/Rating";
 import { listProductDetails } from "../redux/actions/productActions";
 
 const ProductDetails = () => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
