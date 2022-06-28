@@ -8,6 +8,7 @@ import Homepage from "./pages/Homepage";
 // router
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -18,6 +19,10 @@ const App = () => {
           <Routes>
             <Route path="" element={<Homepage />} />
             <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/cart/" element={<Cart />} >
+              <Route path="" element={<Cart/>} />
+              <Route path=":id" element={<Cart/>} />
+            </Route>
           </Routes>
         </Container>
       </main>
