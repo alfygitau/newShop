@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/actions/cartActions";
+import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 import {
   Row,
   Col,
@@ -15,7 +15,7 @@ import Message from "../components/Message";
 
 const Cart = () => {
   const { id } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const qty = window.location.search
     ? Number(window.location.search.split("=")[1])
     : 1;
@@ -24,17 +24,15 @@ const Cart = () => {
   const { cartItems } = cart;
 
   useEffect(() => {
-    if (id) {
-      dispatch(addToCart(id, qty));
-    }
+    dispatch(addToCart(id, qty));
   }, [dispatch, id, qty]);
 
-  const removeFromCart = (id) => {
-    console.log("remove");
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
-    navigate("/login?redirect=shipping")
+    navigate("/login?redirect=shipping");
   };
 
   return (
@@ -78,7 +76,7 @@ const Cart = () => {
                     <Button
                       type="button"
                       variant="light"
-                      onClick={() => removeFromCart(item.product)}
+                      onClick={() => removeFromCartHandler(item.product)}
                     >
                       <i className="fas fa-trash"></i>
                     </Button>
