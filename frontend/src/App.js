@@ -9,6 +9,7 @@ import Homepage from "./pages/Homepage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -19,10 +20,11 @@ const App = () => {
           <Routes>
             <Route path="" element={<Homepage />} />
             <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/cart/" element={<Cart />} >
-              <Route path="" element={<Cart/>} />
-              <Route path=":id" element={<Cart/>} />
+            <Route path="/cart/" element={<Cart />}>
+              <Route path="" element={<Cart />} />
+              <Route path=":id" element={<Cart />} />
             </Route>
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Container>
       </main>
