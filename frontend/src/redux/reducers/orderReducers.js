@@ -2,6 +2,10 @@ import {
   CREATE_ORDER_FAIL,
   CREATE_ORDER_REQUEST,
   CREATE_ORDER_SUCCESS,
+  GET_MY_ORDERS_FAIL,
+  GET_MY_ORDERS_REQUEST,
+  GET_MY_ORDERS_RESET,
+  GET_MY_ORDERS_SUCCESS,
   GET_ORDER_DETAILS_FAIL,
   GET_ORDER_DETAILS_REQUEST,
   GET_ORDER_DETAILS_SUCCESS,
@@ -76,6 +80,29 @@ export const orderPayReducer = (state = {}, action) => {
       };
     case ORDER_PAY_RESET:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const orderListReducer = (state = { orders: [] }, action) => {
+  switch (action.type) {
+    case GET_MY_ORDERS_REQUEST:
+      return {
+        loading: true,
+      };
+    case GET_MY_ORDERS_SUCCESS:
+      return {
+        loading: false,
+        orders: action.payload,
+      };
+    case GET_MY_ORDERS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    case GET_MY_ORDERS_RESET:
+      return { orders: [] };
     default:
       return state;
   }

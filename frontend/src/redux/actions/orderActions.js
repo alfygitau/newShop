@@ -2,6 +2,9 @@ import {
   CREATE_ORDER_FAIL,
   CREATE_ORDER_REQUEST,
   CREATE_ORDER_SUCCESS,
+  GET_MY_ORDERS_FAIL,
+  GET_MY_ORDERS_REQUEST,
+  GET_MY_ORDERS_SUCCESS,
   GET_ORDER_DETAILS_FAIL,
   GET_ORDER_DETAILS_REQUEST,
   GET_ORDER_DETAILS_SUCCESS,
@@ -110,3 +113,34 @@ export const payOrder =
       });
     }
   };
+
+export const listMyOrders = () => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: GET_MY_ORDERS_REQUEST,
+    });
+
+    const {
+      login: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+    const { data } = await axios.get("/api/orders/myorders", config);
+    dispatch({
+      type: GET_MY_ORDERS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_MY_ORDERS_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
