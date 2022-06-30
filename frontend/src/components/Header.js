@@ -6,7 +6,7 @@ import { logout } from "../redux/actions/userActions";
 
 const Header = () => {
   const userLogin = useSelector((state) => state.login);
-  const { loading, error, userInfo } = userLogin;
+  const { userInfo } = userLogin;
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
@@ -29,7 +29,7 @@ const Header = () => {
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <Link to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                    Profile
                   </Link>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
