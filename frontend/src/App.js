@@ -17,6 +17,10 @@ import Payment from "./pages/Payment";
 import PlaceOrder from "./pages/PlaceOrder";
 import Order from "./pages/Order";
 import UserList from "./pages/UserList";
+import UserEdit from "./pages/UserEdit";
+import ProductList from "./pages/ProductList";
+import ProductEdit from "./pages/ProductEdit";
+import OrderList from "./pages/OrderList";
 
 const App = () => {
   return (
@@ -39,6 +43,10 @@ const App = () => {
             <Route path="/placeorder" element={<PlaceOrder />} />
             <Route path="/order/:id" element={<Order />} />
             <Route path="/admin/userlist" element={<UserList />} />
+            <Route path="/admin/user/:id/edit" element={<UserEdit />} />
+            <Route path="/admin/productlist" element={<ProductList />} />
+            <Route path="/admin/orderlist" element={<OrderList />} />
+            <Route path="/admin/product/:id/edit" element={<ProductEdit />} />
           </Routes>
         </Container>
       </main>
