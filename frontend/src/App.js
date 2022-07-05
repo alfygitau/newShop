@@ -30,6 +30,12 @@ const App = () => {
         <Container>
           <Routes>
             <Route path="" element={<Homepage />} />
+            <Route path="/search/:keyword" element={<Homepage />} />
+            <Route path="/page/:pageNumber" element={<Homepage />} />
+            <Route
+              path="/search/:keyword/page/:pageNumber"
+              element={<Homepage />}
+            />
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/cart/" element={<Cart />}>
               <Route path="" element={<Cart />} />
@@ -45,6 +51,10 @@ const App = () => {
             <Route path="/admin/userlist" element={<UserList />} />
             <Route path="/admin/user/:id/edit" element={<UserEdit />} />
             <Route path="/admin/productlist" element={<ProductList />} />
+            <Route
+              path="/admin/productlist/:pageNumber"
+              element={<ProductList />}
+            />
             <Route path="/admin/orderlist" element={<OrderList />} />
             <Route path="/admin/product/:id/edit" element={<ProductEdit />} />
           </Routes>
