@@ -12,6 +12,7 @@ import {
   Card,
 } from "react-bootstrap";
 import Message from "../components/Message";
+import Meta from "../components/Meta";
 
 const Cart = () => {
   const { id } = useParams();
@@ -36,6 +37,8 @@ const Cart = () => {
   };
 
   return (
+    <>
+    <Meta title="Welcome to Deliver | Cart"/>
     <Row>
       <Col md={8}>
         <h1>Shopping Cart</h1>
@@ -114,6 +117,7 @@ const Cart = () => {
         </Card>
       </Col>
     </Row>
+    </>
   );
 };
 

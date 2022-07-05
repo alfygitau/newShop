@@ -66,7 +66,7 @@ const Order = () => {
         setSdkReady(true);
       }
     }
-  }, [dispatch, order, orderId, successPay, successDeliver]);
+  }, [dispatch, order, orderId, successPay, successDeliver, navigate, userInfo]);
 
   if (!loading) {
     // util

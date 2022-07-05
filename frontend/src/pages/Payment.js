@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { savePaymentMethod } from "../redux/actions/cartActions";
 import Steps from "../components/Steps";
+import Meta from "../components/Meta";
 
 const Payment = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,8 @@ const Payment = () => {
   };
 
   return (
+    <>
+    <Meta title="Welcome to Deliver | Payment"/>
     <FormContainer>
       <Steps step1 step2 step3 />
       <h1>Payment Method</h1>
@@ -56,6 +59,7 @@ const Payment = () => {
         </Button>
       </Form>
     </FormContainer>
+    </>
   );
 };
 

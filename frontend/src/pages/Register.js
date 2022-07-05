@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../redux/actions/userActions";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -39,6 +40,8 @@ const Register = () => {
   };
 
   return (
+    <>
+    <Meta title="Welcome to Deliver | Register"/>
     <FormContainer>
       <h1>Sign Up</h1>
       {message && <Message variant="danger">{message}</Message>}
@@ -95,6 +98,7 @@ const Register = () => {
         </Col>
       </Row>
     </FormContainer>
+    </>
   );
 };
 

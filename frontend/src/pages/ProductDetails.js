@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import Meta from "../components/Meta";
 import Rating from "../components/Rating";
 import {
   createProductReview,
@@ -68,11 +69,12 @@ const ProductDetails = () => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row>
-            <Col md={6}>
+            <Col md={3}>
               <Image src={product.image} alt={product.name} fluid />
             </Col>
-            <Col md={3}>
+            <Col md={6}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>{product.name}</h3>

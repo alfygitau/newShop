@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Steps from "../components/Steps";
 import { createOrder } from "../redux/actions/orderActions";
+import Meta from "../components/Meta";
 
 const PlaceOrder = () => {
   const cart = useSelector((state) => state.cart);
@@ -53,6 +54,7 @@ const PlaceOrder = () => {
 
   return (
     <>
+    <Meta title="Welcome to Deliver | Place Order"/>
       <Steps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

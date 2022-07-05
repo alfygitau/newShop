@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/actions/userActions";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,6 +33,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Meta title="Welcome to Deliver | Login"/>
     <FormContainer>
       <h1>Sign In</h1>
       {error && <Message variant="danger">{error}</Message>}
@@ -69,6 +72,7 @@ const Login = () => {
         </Col>
       </Row>
     </FormContainer>
+    </>
   );
 };
 

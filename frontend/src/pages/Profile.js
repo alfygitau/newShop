@@ -9,6 +9,7 @@ import {
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listMyOrders } from "../redux/actions/orderActions";
+import Meta from "../components/Meta";
 
 const Profile = () => {
   const [email, setEmail] = useState("");
@@ -63,6 +64,8 @@ const Profile = () => {
   };
 
   return (
+    <>
+    <Meta title="Welcome to Deliver | Profile"/>
     <Row>
       <Col md={3}>
         <h2>User Profile</h2>
@@ -164,6 +167,7 @@ const Profile = () => {
         )}
       </Col>
     </Row>
+    </>
   );
 };
 

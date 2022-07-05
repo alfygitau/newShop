@@ -9,6 +9,8 @@ import { listProducts } from "../redux/actions/productActions";
 import { useParams } from "react-router-dom";
 import Paginate from "../components/Paginate";
 import CarouselX from "../components/Carousel";
+import Meta from "../components/Meta";
+
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -27,7 +29,8 @@ const Homepage = () => {
 
   return (
     <>
-    {/* {!keyword && <CarouselX/> } */}
+    <Meta title="Welcome to Deliver | Shop"/>
+      {/* {!keyword && <CarouselX/> } */}
       <Search />
       <h1>Latest Products</h1>
       {loading ? (
